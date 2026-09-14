@@ -378,11 +378,21 @@ footer a {
   }
 
   .logo {
-    min-height: 85px;
-    border-right: none;
-    border-bottom: 2px solid var(--pink-border);
-  }
+   display: flex;
+   align-items: center;
+   justify-content: center;
+   border-right: 2px solid var(--pink-border);
+   padding: 12px;
+   overflow: hidden;
+}
 
+  .logo img {
+   width: 100%;
+   max-width: 175px;
+   height: auto;
+   display: block;
+   object-fit: contain;
+}
   .page-layout {
     grid-template-columns: 1fr;
   }
