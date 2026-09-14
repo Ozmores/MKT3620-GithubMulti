@@ -1,0 +1,508 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Girly Pink Website Template</title>
+
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: "Trebuchet MS", Arial, sans-serif;
+      background: #ffd6e7;
+      color: #4a2340;
+      min-height: 100vh;
+      overflow-x: hidden;
+    }
+
+    /* Main website wrapper */
+    .site-wrapper {
+      width: min(1200px, 94%);
+      margin: 25px auto;
+      background: #fff8fc;
+      border: 3px solid #e8a7c8;
+      border-radius: 22px;
+      box-shadow: 0 10px 30px rgba(157, 67, 116, 0.18);
+      overflow: hidden;
+    }
+
+    /* HEADER */
+    header {
+      display: grid;
+      grid-template-columns: 190px 1fr;
+      min-height: 150px;
+      background: linear-gradient(135deg, #ffeaf4, #ffd1e5);
+    }
+
+    .logo {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-right: 2px solid #e8a7c8;
+      font-family: Georgia, serif;
+      font-size: 42px;
+      font-weight: bold;
+      color: #b33f7b;
+      text-shadow: 2px 2px 0 #fff;
+    }
+
+    .header-content {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .graphic-area {
+      flex: 1;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 20px;
+      font-family: Georgia, serif;
+      font-size: 24px;
+      color: #9c3e70;
+    }
+
+    .graphic-area span {
+      display: block;
+      font-family: "Trebuchet MS", Arial, sans-serif;
+      font-size: 13px;
+      margin-top: 7px;
+      color: #81536e;
+    }
+
+    nav {
+      display: flex;
+      justify-content: center;
+      gap: 8px;
+      padding: 10px;
+      border-top: 2px solid #e8a7c8;
+      background: rgba(255, 255, 255, 0.55);
+    }
+
+    nav a {
+      color: #8d285f;
+      text-decoration: none;
+      font-weight: bold;
+      padding: 8px 18px;
+      border-radius: 20px;
+      transition: 0.2s ease;
+    }
+
+    nav a:hover {
+      background: #fff;
+      color: #d34c91;
+      transform: translateY(-2px);
+    }
+
+    .secondary-nav {
+      border-top: 1px dashed #e8a7c8;
+      font-size: 13px;
+      padding: 7px;
+    }
+
+    /* PAGE CONTENT */
+    .page-layout {
+      display: grid;
+      grid-template-columns: 190px 1fr 190px;
+      min-height: 570px;
+    }
+
+    .left-sidebar {
+      padding: 25px 18px;
+      border-right: 2px solid #e8a7c8;
+      background: #fff0f7;
+    }
+
+    .left-sidebar h3 {
+      color: #b33f7b;
+      margin-bottom: 15px;
+      font-family: Georgia, serif;
+    }
+
+    .left-sidebar a {
+      display: block;
+      color: #70395b;
+      text-decoration: none;
+      padding: 9px 5px;
+      border-bottom: 1px dotted #dba3c2;
+    }
+
+    .left-sidebar a:hover {
+      color: #d13d89;
+      padding-left: 10px;
+    }
+
+    /* MAIN CONTENT */
+    main {
+      padding: 28px;
+      background: #fffafd;
+    }
+
+    .hero {
+      min-height: 180px;
+      border-radius: 18px;
+      background:
+        radial-gradient(circle at 20% 25%, rgba(255,255,255,.8) 0 4px, transparent 5px),
+        radial-gradient(circle at 80% 70%, rgba(255,255,255,.8) 0 3px, transparent 4px),
+        linear-gradient(135deg, #f6a6ca, #e98db8);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 25px;
+      color: white;
+      box-shadow: inset 0 0 25px rgba(255,255,255,.25);
+      margin-bottom: 25px;
+    }
+
+    .hero h1 {
+      font-family: Georgia, serif;
+      font-size: clamp(30px, 5vw, 48px);
+      text-shadow: 2px 2px 0 #a83b71;
+    }
+
+    .hero p {
+      margin-top: 8px;
+      font-size: 14px;
+    }
+
+    .content-title {
+      font-family: Georgia, serif;
+      color: #a83270;
+      font-size: 28px;
+      margin-bottom: 12px;
+    }
+
+    .content-box {
+      line-height: 1.7;
+      font-size: 15px;
+    }
+
+    .cute-card {
+      margin-top: 22px;
+      padding: 18px;
+      background: #fff0f7;
+      border: 2px solid #f0bfd6;
+      border-radius: 16px;
+    }
+
+    .cute-card h3 {
+      color: #c13e7e;
+      margin-bottom: 7px;
+    }
+
+    /* RIGHT STICKY SIDEBAR */
+    .right-sidebar {
+      padding: 25px 18px;
+      border-left: 2px solid #e8a7c8;
+      background: #fff0f7;
+    }
+
+    .right-sidebar h3 {
+      font-family: Georgia, serif;
+      color: #b33f7b;
+      margin-bottom: 15px;
+    }
+
+    .side-box {
+      background: white;
+      border: 1px solid #efbfd6;
+      border-radius: 14px;
+      padding: 13px;
+      margin-bottom: 12px;
+      font-size: 13px;
+      box-shadow: 0 4px 10px rgba(180, 65, 125, 0.08);
+    }
+
+    .social-icons {
+      display: flex;
+      gap: 8px;
+      margin-top: 8px;
+    }
+
+    .social-icons a {
+      width: 32px;
+      height: 32px;
+      display: grid;
+      place-items: center;
+      border-radius: 50%;
+      background: #f2a6c9;
+      color: white;
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    /* FOOTER */
+    footer {
+      padding: 18px;
+      text-align: center;
+      background: #f9c5dc;
+      border-top: 2px solid #e8a7c8;
+      color: #713b59;
+      font-size: 13px;
+    }
+
+    footer a {
+      color: #922b65;
+      margin: 0 7px;
+      text-decoration: none;
+    }
+
+    /* SPARKLE MOUSE EFFECT */
+    .sparkle {
+      position: fixed;
+      pointer-events: none;
+      z-index: 9999;
+      width: 9px;
+      height: 9px;
+      transform: rotate(45deg);
+      background: white;
+      border-radius: 2px;
+      box-shadow: 0 0 8px #fff, 0 0 14px #ff73b5;
+      animation: sparkle-fade 0.75s ease-out forwards;
+    }
+
+    .sparkle::before,
+    .sparkle::after {
+      content: "";
+      position: absolute;
+      background: white;
+      border-radius: 50%;
+    }
+
+    .sparkle::before {
+      width: 9px;
+      height: 3px;
+      top: 3px;
+      left: 0;
+    }
+
+    .sparkle::after {
+      width: 3px;
+      height: 9px;
+      top: 0;
+      left: 3px;
+    }
+
+    @keyframes sparkle-fade {
+      0% {
+        opacity: 1;
+        transform: rotate(45deg) scale(0.6);
+      }
+      100% {
+        opacity: 0;
+        transform: rotate(45deg) scale(1.8) translateY(-18px);
+      }
+    }
+
+    /* MOBILE */
+    @media (max-width: 800px) {
+      header {
+        grid-template-columns: 1fr;
+      }
+
+      .logo {
+        min-height: 85px;
+        border-right: none;
+        border-bottom: 2px solid #e8a7c8;
+      }
+
+      .page-layout {
+        grid-template-columns: 1fr;
+      }
+
+      .left-sidebar,
+      .right-sidebar {
+        border: none;
+        border-bottom: 2px solid #e8a7c8;
+      }
+
+      .left-sidebar {
+        order: 1;
+      }
+
+      main {
+        order: 2;
+      }
+
+      .right-sidebar {
+        order: 3;
+      }
+
+      nav {
+        flex-wrap: wrap;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <div class="site-wrapper">
+
+    <!-- HEADER / LOGO / NAVIGATION -->
+    <header>
+      <div class="logo">
+        ♡ LOGO
+      </div>
+
+      <div class="header-content">
+        <div class="graphic-area">
+          <div>
+            ✦ Welcome to My Website ✦
+            <span>This area can contain an informational graphic or a short description of your site.</span>
+          </div>
+        </div>
+
+        <nav class="primary-nav">
+          <a href="#home">Home</a>
+          <a href="#about">About</a>
+          <a href="#products">Products</a>
+          <a href="#contact">Contact</a>
+        </nav>
+
+        <nav class="secondary-nav">
+          <a href="#new">New</a>
+          <a href="#favorites">Favorites</a>
+          <a href="#gallery">Gallery</a>
+        </nav>
+      </div>
+    </header>
+
+    <!-- THREE-COLUMN BODY -->
+    <div class="page-layout">
+
+      <!-- LEFT NAVIGATION -->
+      <aside class="left-sidebar">
+        <h3>♡ Navigation</h3>
+
+        <a href="#home">Home</a>
+        <a href="#about">About Me</a>
+        <a href="#projects">Projects</a>
+        <a href="#shop">Shop</a>
+        <a href="#gallery">Gallery</a>
+        <a href="#contact">Contact</a>
+
+        <br>
+
+        <h3>✿ Explore</h3>
+        <a href="#blog">Blog</a>
+        <a href="#favorites">Favorites</a>
+      </aside>
+
+      <!-- MAIN CONTENT -->
+      <main id="home">
+
+        <section class="hero">
+          <div>
+            <h1>Pretty in Pink ♡</h1>
+            <p>Your hero image or featured content can go here.</p>
+          </div>
+        </section>
+
+        <section id="about">
+          <h2 class="content-title">Main Content Area</h2>
+
+          <div class="content-box">
+            <p>
+              Welcome to my website! This is the main content area where you
+              can introduce your website, brand, portfolio, blog, products,
+              or anything else you would like visitors to see.
+            </p>
+
+            <p style="margin-top: 12px;">
+              You can replace this text with your own content. The layout
+              follows the template you provided, with a main content section,
+              navigation areas, a hero section, a sticky information area,
+              and a footer.
+            </p>
+          </div>
+
+          <div class="cute-card" id="projects">
+            <h3>✧ Featured Content ✧</h3>
+            <p>
+              Add your projects, products, announcements, images, or other
+              important information inside this cute pink card.
+            </p>
+          </div>
+
+        </section>
+      </main>
+
+      <!-- STICKY CONTENT -->
+      <aside class="right-sidebar">
+        <h3>♡ Quick Info</h3>
+
+        <div class="side-box">
+          <strong>✦ News</strong>
+          <p>Latest updates can go here.</p>
+        </div>
+
+        <div class="side-box">
+          <strong>🎀 Offers</strong>
+          <p>Promotions and special offers.</p>
+        </div>
+
+        <div class="side-box">
+          <strong>♡ Socials</strong>
+          <div class="social-icons">
+            <a href="#" aria-label="Instagram">◎</a>
+            <a href="#" aria-label="TikTok">♪</a>
+            <a href="#" aria-label="Pinterest">P</a>
+          </div>
+        </div>
+
+      </aside>
+
+    </div>
+
+    <!-- FOOTER -->
+    <footer id="contact">
+      <p>© 2026 My Girly Website ♡ All Rights Reserved</p>
+      <p style="margin-top: 6px;">
+        <a href="#home">Home</a> |
+        <a href="#contact">Contact</a> |
+        <a href="#privacy">Privacy</a> |
+        <a href="#sitemap">Sitemap</a>
+      </p>
+    </footer>
+
+  </div>
+
+  <!-- SPARKLE MOUSE JAVASCRIPT -->
+  <script>
+    let lastSparkle = 0;
+
+    document.addEventListener("mousemove", function(event) {
+      const now = Date.now();
+
+      // Prevent too many sparkles from appearing at once
+      if (now - lastSparkle < 45) return;
+      lastSparkle = now;
+
+      const sparkle = document.createElement("div");
+      sparkle.className = "sparkle";
+
+      // Slight random movement makes the trail feel more magical
+      const offsetX = (Math.random() - 0.5) * 14;
+      const offsetY = (Math.random() - 0.5) * 14;
+
+      sparkle.style.left = (event.clientX + offsetX) + "px";
+      sparkle.style.top = (event.clientY + offsetY) + "px";
+
+      document.body.appendChild(sparkle);
+
+      setTimeout(() => {
+        sparkle.remove();
+      }, 750);
+    });
+  </script>
+
+</body>
+</html>
